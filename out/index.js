@@ -33,13 +33,14 @@ var readline = __importStar(require("readline"));
 var radiciacao_1 = __importDefault(require("./radiciacao"));
 var potenciacao_1 = __importDefault(require("./potenciacao"));
 var equacao_1 = __importDefault(require("./equacao"));
+var divisao_1 = __importDefault(require("./divisao"));
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 function iniciar() {
     console.log('Bem-Vindo a Calculadora!');
-    rl.question('Digite a operação desejada (somar, subtrair, multiplicar, potenciação, raiz, equação): ', function (operacao) {
+    rl.question('Digite a operação desejada (somar, subtrair, multiplicar, divisão, potenciação, raiz e equação): ', function (operacao) {
         if (operacao.toLowerCase() === 'raiz') {
             rl.question('Digite o número para calcular a raiz quadrada: ', function (numero) {
                 var num = parseFloat(numero);
@@ -105,6 +106,9 @@ function iniciar() {
                             break;
                         case 'potenciação':
                             console.log("O resultado da potencia\u00E7\u00E3o \u00E9: ".concat(potenciacao_1.default.calcular(num1, num2), "\n"));
+                            break;
+                        case 'divisão':
+                            console.log("O resultado da divis\u00E3o \u00E9: ".concat(divisao_1.default.calcular(num1, num2), "\n"));
                             break;
                         case 'sair':
                             rl.close();

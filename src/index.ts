@@ -5,6 +5,7 @@ import * as readline from 'readline';
 import Radiciacao from "./radiciacao";
 import Potenciacao from "./potenciacao";
 import EquacaoSegundoGrau from "./equacao";
+import Divisao from "./divisao";
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -13,7 +14,7 @@ const rl = readline.createInterface({
 
 function iniciar() {
     console.log('Bem-Vindo a Calculadora!')
-    rl.question('Digite a operação desejada (somar, subtrair, multiplicar, potenciação, raiz, equação): ', (operacao) => {
+    rl.question('Digite a operação desejada (somar, subtrair, multiplicar, divisão, potenciação, raiz e equação): ', (operacao) => {
         if (operacao.toLowerCase() === 'raiz') {
             rl.question('Digite o número para calcular a raiz quadrada: ', (numero) => {
                 const num = parseFloat(numero);
@@ -72,6 +73,9 @@ function iniciar() {
                             break;
                         case 'potenciação':
                             console.log(`O resultado da potenciação é: ${Potenciacao.calcular(num1, num2)}\n`);
+                            break;
+                        case 'divisão':
+                            console.log(`O resultado da divisão é: ${Divisao.calcular(num1, num2)}\n`);
                             break;
                         case 'sair':
                             rl.close();
